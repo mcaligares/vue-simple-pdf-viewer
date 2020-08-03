@@ -1,17 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="zoomIn">ZoomIn</button>
+    <button @click="zoomOut">ZoomOut</button>
+    <SimplePDFViewer
+      :scale="scale"
+      :pdfURL="pdfURL"
+      :externalPdfWorker="externalPdfWorker"
+    >
+      <template slot="placeholder">
+        PDF Here
+      </template>
+      <template slot="loading">
+        loading...
+      </template>
+      <template slot="error">
+        error!
+      </template>
+    </SimplePDFViewer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SimplePDFViewer from './components/SimplePDFViewer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SimplePDFViewer
+  },
+  mounted () {
+    setTimeout(() => {
+      console.log('change document')
+      this.pdfURL = 'http://localhost:5000/sample.pdf'
+    }, 2000)
+  },
+  data: () => ({
+    scale: 1,
+    pdfURL: null,
+    externalPdfWorker: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/build/pdf.worker.js'
+  }),
+  methods: {
+    zoomIn () {
+      this.scale += 0.25
+    },
+    zoomOut () {
+      this.scale -= 0.25
+    }
   }
 }
 </script>

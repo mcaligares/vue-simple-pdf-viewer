@@ -1,4 +1,4 @@
-# vue-pdfjs-simple
+# vue-simple-pdf-viewer
 
 ## Project setup
 ```
