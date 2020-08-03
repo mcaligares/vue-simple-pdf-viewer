@@ -1,8 +1,21 @@
 {
   "name": "vue-simple-pdf-viewer",
   "version": "0.0.1",
-  "private": true,
   "main": "src/components/SimplePDFViewer",
+  "contributors": [
+    "Miguel Augusto Caligares <mcaligares@gmail.com> (https://github.com/mcaligares)"
+  ],
+  "homepage": "https://github.com/mcaligares/vue-simple-pdf-viewer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcaligares/vue-simple-pdf-viewer.git"
+  },
+  "keywords": [
+    "vue",
+    "pdf",
+    "pdfjs",
+    "pdf-viewer"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
