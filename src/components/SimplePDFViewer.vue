@@ -18,7 +18,7 @@ export default {
   name: 'SimplePDFViewer',
   props: {
     scale: Number,
-    pdfURL: String,
+    pdfReference: Object,
     externalPdfWorker: String
   },
   data: () => ({
@@ -29,7 +29,7 @@ export default {
   }),
   async mounted () {
     PDFJS.GlobalWorkerOptions.workerSrc = this.externalPdfWorker
-    if (this.pdfURL) this.createDocument()
+    if (this.pdfReference) this.createDocument()
   },
   methods: {
     initialize ({ placeholder = false, loading = true } = { }) {
@@ -46,7 +46,7 @@ export default {
     async createDocument () {
       try {
         this.initialize()
-        this.pdf = await PDFJS.getDocument(this.pdfURL).promise
+        this.pdf = await PDFJS.getDocument(this.pdfReference).promise
         for (let page = 1; page <= this.pdf.numPages; page++) {
           await this.loadPage(this.pdf, page)
         }
@@ -71,7 +71,7 @@ export default {
     }
   },
   watch: {
-    pdfURL (value) {
+    pdfReference (value) {
       this.createDocument()
     },
     scale (value) {
