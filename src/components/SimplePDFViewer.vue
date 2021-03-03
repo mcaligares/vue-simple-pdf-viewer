@@ -29,7 +29,11 @@ export default {
   }),
   async mounted () {
     PDFJS.GlobalWorkerOptions.workerSrc = this.externalPdfWorker
-    if (this.pdfReference) this.createDocument()
+    if (this.pdfReference) {
+      this.createDocument()
+    } else {
+      console.warn('No pdfReference found!', this.pdfReference)
+    }
   },
   methods: {
     initialize ({ placeholder = false, loading = true } = { }) {
