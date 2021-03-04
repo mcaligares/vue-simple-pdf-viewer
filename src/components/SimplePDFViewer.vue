@@ -18,7 +18,7 @@ export default {
   name: 'SimplePDFViewer',
   props: {
     scale: Number,
-    pdfReference: Object,
+    pdfReference: String,
     externalPdfWorker: String
   },
   data: () => ({
