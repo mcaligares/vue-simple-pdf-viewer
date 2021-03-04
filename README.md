@@ -32,3 +32,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## History
 
 #### 0.1.1 Fix inline if sentence
+
+#### 0.1.2 Fix pdfReference prop type

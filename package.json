@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-pdf-viewer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "src/components/SimplePDFViewer",
   "contributors": [
     "Miguel Augusto Caligares <mcaligares@gmail.com> (https://github.com/mcaligares)"
